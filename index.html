@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista</title>
+      
+    <style> 
+    *{
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: aqua;
+        min-height: 100vh;
+    }
+    div{
+        background-color: aquamarine;
+        padding: 15px;
+        
+    }
+    button{
+        background-color: blue;
+        color:antiquewhite;
+        border: none;
+        font-size: 17px;
+    }
+    input{
+        background-color:deepskyblue;
+        border: 2px black solid;
+        font-size: 17px;
+        border-radius: 10px;
+
+    }
+    h1{
+        background-color: paleturquoise;
+        padding: 20px;
+    }
+    ul{ 
+        background-color: rgb(150, 223, 245);
+    }
+    
+    </style>
+
+</head>
+<body>
+
+<div>    
+    <h1>lista de tarefa</h1>   
+    <ul> </ul>
+    <input placeholder="escreva sua tarefa">
+    <button onclick="colocar()">adicionar</button>
+    <button onclick="tirar()">remover</button>
+</div>
+
+    <script>
+
+        const tarefas = ["(\\_/)","(o-o)","(o   o)"]
+
+        function colocar() {
+            const input = document.querySelector("input")
+            const tarefa = input.value
+            tarefas.push(tarefa)
+            input.value = ""
+            tela()
+        }
+        function tirar(){
+            tarefas.pop();
+            tela();
+        }
+        function tela() {
+            const ul = document.querySelector("ul")
+            ul.innerHTML=null
+
+            if (ul == 2) {
+                alert("aeeee")
+            }
+            else {
+
+            }
+
+            tarefas.forEach(function (tarefa) {
+                const li = document.createElement("li")
+                li.innerText = tarefa
+                ul.appendChild(li)
+            }
+            )
+            }
+        tela()
+    </script>
+
+</body> 
+
+</html>
